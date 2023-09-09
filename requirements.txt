@@ -1,0 +1,4 @@
+django-htmx
+django
+django-widget-tweaks
+whitenoise
