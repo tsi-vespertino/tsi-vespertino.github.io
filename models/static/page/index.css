@@ -1,0 +1,13 @@
+form{
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 0;
+}
+
+.box{
+    margin-top: 10%;
+}
+
+.input, .button, .box {
+    width: fit-content;
+}

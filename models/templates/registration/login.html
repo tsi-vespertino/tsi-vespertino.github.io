@@ -1,0 +1,22 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include 'head_meta.html' %}
+        <link rel="stylesheet" href="{% static 'registration/login.css' %}" />
+        <link rel="stylesheet" href="{% static 'app/form.css' %}" />
+    </head>
+        <body>
+            {% include 'registration/nav.html'%}
+            <form method="post" autocomplete="off" class="box" onsubmit="window.href.replace('/admin/')">
+                {% csrf_token %}
+                <h1 class="title">Log-In</h1>
+                {% render_field form.username class='input' placeholder='Nome' autocomplete="off" %} <br />
+                {% render_field form.password class='input' placeholder='Senha' autocomplete="off" %}
+                <input type="submit" class="button" value="Enviar" />
+                <input type="reset" class="button" value="Limpar" />
+            </form>
+        </body>
+    </html>

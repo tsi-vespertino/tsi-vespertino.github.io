@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input{
+    z-index: 0;
+    width: 100%;
+    margin-top: 1%;
+    border-color: #323232;
+}
+
+.button{
+    margin-top: 1%;
+}
+
+table {
+    margin-top: 5%;
+    margin-bottom: 40%;
+    text-align: center;
+}
+
+input.is-dark {
+    width: fit-content;
+    background-color: #212121; 
+}
+
+#search {
+    border-radius: 2vw;
+    border: solid 0.2vh #AAAAAA;
+}
+
+table.table.is-narrow th{
+    text-align: center;
+}

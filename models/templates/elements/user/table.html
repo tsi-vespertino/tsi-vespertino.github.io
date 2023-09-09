@@ -1,0 +1,17 @@
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <tr>
+        <th>Nome do Arquivo</th>
+        <th>Semestre</th>
+        <th>Matéria</th>
+        <th>Data de Envio</th>
+
+    </tr>
+    {% for x in content %}
+    <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.content.semester }}</td>
+        <td>{{ x.content.name }}</td>
+        <td>{{ x.uploadDate }}</td>
+    </tr>
+    {% endfor %}
+</table>

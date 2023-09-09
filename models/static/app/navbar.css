@@ -1,0 +1,50 @@
+ul.navigation {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+    list-style-type: none;
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    overflow: hidden;
+    background: #212121;
+    z-index: 1;
+}
+
+a.navigation {
+
+    text-decoration: none;
+    display: block;
+    padding: 14px 14px;
+    background-color: #212121;
+    text-align: center;
+    position: relative;
+
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+a:link,
+a:visited,
+a:active {
+
+    font-size: .850rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 250ms linear;
+
+}
+
+a.navigation:hover {
+    border: thin 0.2vh #DDDDDD;
+    background-color: #AAAAAA;
+    color: #000000;
+    text-shadow: 1px 1px 2px #212144, 0 0 1em #FFFFFF, 0 0 0.2em #FFFFFF;
+    transition: 100ms linear;
+}

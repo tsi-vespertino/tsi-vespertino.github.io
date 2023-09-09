@@ -1,0 +1,46 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        {% include 'head_meta.html' %}
+        <link rel="stylesheet" href="{% static 'app/form.css' %}" />
+    </head>
+    
+    {% if user.is_authenticated %}
+        <body>
+
+            {% include 'elements/admin/nav.html' %}
+
+            <form id="form" method="post" action="" autocomplete="off" class="box">
+                <h2 class="subtitle">Adicionar Arquivo</h2>
+                {% csrf_token %}
+                {% render_field file_form.name class="input" placeholder='Nome do arquivo' autocomplete="off" %} <br/>
+                {% render_field file_form.sender class="input" placeholder='Nome do remetente' autocomplete="off" %} <br/>
+                {% render_field file_form.curator class="input" placeholder='Selecione' %} <br/>
+                {% render_field file_form.content class="input" id="content" placeholder='Selecione' autocomplete="off" %} <br/>
+                {% render_field file_form.uploadDate class="input" placeholder='dd/mm/yyyy' type='date' autocomplete="off" %} <br/>
+                <input type="submit" class="button" value="Enviar" />
+                <input type="reset" class="button" value="Limpar" />
+            </form>
+
+            <form class="box" id="search" hx-trigger="submit" autocomplete="off" hx-get="/admin_search/" hx-target="#table-space">
+                <h2 class="subtitle">Pesquisar</h2>
+                <input name="q" type="text" autocomplete="off" placeholder="Pesquise aqui" class="input is-rounded" />
+                <input type="submit" autocomplete="off" class="button is-dark is-rounded" value="Pesquisar" />
+                <input type="reset" autocomplete="off" class="button is-dark is-rounded" value="Limpar" hx-trigger="click" hx-target="#table-space" hx-get="/admin_search/?q= " />
+            </form>
+
+            <div class="table-container" id="table-space">
+                {% include 'elements/admin/table.html' %}
+                <br/>
+            </div>
+    
+    </body>
+    {% else %}
+        <script type="text/javascript">
+            window.location.replace("/accounts/login")
+        </script>
+    {% endif %}
+</html>
